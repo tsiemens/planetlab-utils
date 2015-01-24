@@ -110,7 +110,8 @@ def runScriptOnNodes(api_server, auth, runner, nodehosts, all_nodes=False,
     #print nodes
 
     for node in nodes:
-        runner.doOnNode(node)
+        if node['node_id'] % 2 == 0:
+            runner.doOnNode(node)
 
 if __name__ == "__main__":
     main()
