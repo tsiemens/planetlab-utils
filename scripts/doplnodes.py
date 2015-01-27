@@ -27,7 +27,10 @@ def main():
                       default=False,
                       help='Instead of executing ARG as a file, ' +
                             'it will be executed directly.')
-
+    parser.add_option('-i', '--identity-file',
+                      action='store', dest='identity_file',
+                      help='The private key which ssh/scp will use. ' +
+                            'Not required if an ssh agent is being used.')
 
     options, args = parser.parse_args()
 
@@ -40,9 +43,11 @@ def main():
         print 'Authorized!'
         runner = None
         if options.scp_dir:
-            runner = ScpRunner(options.scp_dir, args[0])
+            runner = ScpRunner(options.scp_dir, args[0],
+                               options.identity_file)
         elif options.literal_script:
-            runner = SshScriptRunner(args[0], args[0])
+            runner = SshScriptRunner(args[0], args[0],
+                                    options.identity_file)
         else:
             f = open(args[0], 'r')
             scripttext = f.read()
@@ -63,27 +68,36 @@ def main():
 
 
 class SshScriptRunner():
-    def __init__(self, scriptname, scripttext):
+    def __init__(self, scriptname, scripttext, identity_file=None):
         self.scriptname = scriptname
         self.scripttext = scripttext
+        self.identity_file = identity_file
 
     def do_on_node(self, node):
         print('Running {0} on {1}'.format(self.scriptname, node['hostname']))
-        p = Popen(['ssh', '-o', 'StrictHostKeyChecking=no', 
-                   'ubc_eece411_2@{0}'.format(node['hostname']), 
+        identity_args = []
+        if self.identity_file != None:
+            identity_args = ['-i', self.identity_file]
+        p = Popen(['ssh', '-o', 'StrictHostKeyChecking=no'] + identity_args +
+                   ['ubc_eece411_2@{0}'.format(node['hostname']),
                    'bash -s'], stdin=PIPE)
         p.communicate(self.scripttext)
 
 
 class ScpRunner():
-    def __init__(self, directory, to_copy):
+    def __init__(self, directory, to_copy, identity_file=None):
         self.directory = directory
         self.to_copy = to_copy
+        self.identity_file = identity_file
 
     def do_on_node(self, node):
         print('Copying {0} to {1}'.format(self.to_copy, node['hostname']))
-        p = Popen(['scp', '-o', 'StrictHostKeyChecking=no',
-                   '-rp', self.to_copy,
+
+        identity_args = []
+        if self.identity_file != None:
+            identity_args = ['-i', self.identity_file]
+        p = Popen(['scp', '-o', 'StrictHostKeyChecking=no'] + identity_args +
+                   ['-rp', self.to_copy,
                    'ubc_eece411_2@{0}:{1}'.format(node['hostname'],
                                                   self.directory)])
 
