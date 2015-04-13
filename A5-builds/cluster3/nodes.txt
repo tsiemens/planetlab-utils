@@ -1,0 +1,3 @@
+pl4.cs.unm.edu
+pli1-pa-2.hpl.hp.com
+planetlab1.unr.edu

@@ -1,0 +1,3 @@
+kc-sce-plab2.umkc.edu
+planetlab1.cs.uml.edu
+plonk.cs.uwaterloo.ca

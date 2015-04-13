@@ -1,0 +1,3 @@
+planetlab1.cs.uiuc.edu
+planetlab-n2.wand.net.nz
+node2.planetlab.mathcs.emory.edu

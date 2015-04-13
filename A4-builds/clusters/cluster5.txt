@@ -1,0 +1,3 @@
+planetlab2.csuohio.edu
+pl4.cs.unm.edu
+planetlab1.eecs.umich.edu

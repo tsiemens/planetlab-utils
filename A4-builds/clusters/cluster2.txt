@@ -1,0 +1,3 @@
+planetlab2.cs.purdue.edu
+planetlab1.koganei.itrc.net
+pl2.cs.unm.edu

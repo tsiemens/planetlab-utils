@@ -1,0 +1,3 @@
+planetlab1.cs.colorado.edu
+ricepl-5.cs.rice.edu
+planetlab6.goto.info.waseda.ac.jp

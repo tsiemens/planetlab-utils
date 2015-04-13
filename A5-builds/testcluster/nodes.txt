@@ -1,0 +1,7 @@
+plonk.cs.uwaterloo.ca
+pl2.cs.montana.edu
+planetlab2.csuohio.edu
+planetlab1.tsuniv.edu
+planetlab2.cs.colorado.edu
+planetlab1.arizona-gigapop.net
+pl2.cs.unm.edu

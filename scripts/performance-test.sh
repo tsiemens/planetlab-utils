@@ -6,13 +6,6 @@ if [ $1 -z ]; then
     exit
 fi
 
-echo "Testing performance of 100 asynchronous puts..."
-time(
-for i in {1000..1100}; do
-    OUTPUT="$(./kvclient put $1 $i 'hello' & )"
-done
-)
-
 echo "Testing performance of 100 synchronous puts..."
 time(
 for i in {1000..1100}; do

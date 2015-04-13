@@ -1,0 +1,3 @@
+planetlab1.cs.colorado.edu
+planetlab3.cs.uoregon.edu
+planetlab4.cs.uoregon.edu

@@ -1,0 +1,3 @@
+cs-planetlab4.cs.surrey.sfu.ca
+planetlab2.cs.ucla.edu
+planetlab2.cs.colorado.edu
