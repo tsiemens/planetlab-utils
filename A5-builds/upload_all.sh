@@ -10,5 +10,5 @@ if [ ! -f $1 ]; then
     exit
 fi
 while read p; do
-    ssh -o ConnectTimeout=10 -o StrictHostKeyChecking='no' ubc_eece411_2@$p "curl -L -o kvserver https://www.dropbox.com/s/qow307ga3v4gy5f/kvserver?dl=0" &
+    ssh -o ConnectTimeout=20 -o StrictHostKeyChecking='no' ubc_eece411_2@$p "curl -L -o kvserver https://www.dropbox.com/s/qow307ga3v4gy5f/kvserver?dl=0" &
 done <$1

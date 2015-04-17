@@ -8,12 +8,12 @@
   "MembershipFrequency": 30000000000,
   "DialTimeout": 3000000000,
   "NodeTimeout": 300000000000,
-  "DefaultLocalhostPort": 5555,
+  "DefaultLocalhostPort": 7700,
   "MaxReplicas": 7,
   "PeerList": [
-      "plonk.cs.uwaterloo.ca:5555",
-      "pl2.cs.montana.edu:5555",
-      "planetlab2.csuohio.edu:5555"
+      "plonk.cs.uwaterloo.ca:7700",
+      "pl2.cs.montana.edu:7700",
+      "planetlab2.csuohio.edu:7700"
   ]
 }
 

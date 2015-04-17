@@ -8,10 +8,10 @@
   "MembershipFrequency": 30000000000,
   "DialTimeout": 3000000000,
   "NodeTimeout": 300000000000,
-  "DefaultLocalhostPort": 5555,
+  "DefaultLocalhostPort": 7700,
   "MaxReplicas": 7,
   "PeerList": [
-       "planetlab1.cs.colorado.edu:5555"
+       "planetlab1.cs.colorado.edu:7700"
   ]
 }
 

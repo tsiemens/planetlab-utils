@@ -8,10 +8,10 @@
   "MembershipFrequency": 30000000000,
   "DialTimeout": 3000000000,
   "NodeTimeout": 300000000000,
-  "DefaultLocalhostPort": 5555,
+  "DefaultLocalhostPort": 7700,
   "MaxReplicas": 7,
   "PeerList": [
-      "cs-planetlab4.cs.surrey.sfu.ca:5555"
+      "cs-planetlab4.cs.surrey.sfu.ca:7700"
   ]
 }
 
